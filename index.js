@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const fs = require("node:fs");
+const cors = require("cors");
 
+app.use(cors());
 app.use(express.json());
 
 const readWatchlist = () => JSON.parse(fs.readFileSync("./data.json")).watchlist;
